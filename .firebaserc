@@ -1,9 +1,12 @@
 {
   "projects": {
-    "default": "barokah-music-player-e9b26",
+    "default": "barokah-music-player-a8c24",
     "barokah music player": "barokah-music-player-f5b8a",
     "no": "modul6-pwa2-kel14-43971",
-    "barokah music playerr": "barokah-music-player-e9b26"
+    "barokah music playerr": "barokah-music-player-e9b26",
+    "barokahplayermusic": "barokahplayermusic",
+    "barokah-music-player": "barokah-music-player-b0657",
+    "barokahmusic": "barokah-music-player-a8c24"
   },
   "targets": {},
   "etags": {}

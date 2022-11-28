@@ -13,11 +13,14 @@ import {HiOutlineInformationCircle} from 'react-icons/hi';
 import {HiVolumeUp} from 'react-icons/hi';
 import {HiHeart} from 'react-icons/hi';
 import {HiLightningBolt} from 'react-icons/hi';
+import { HiLogout } from "react-icons/hi";
+import apiClient from "../../spotify";
 
 
 export default function Home() {
   const [token, setToken] = useState("");
-
+  const [image, setImage] = useState(
+  );
   useEffect(() => {
     const token = window.localStorage.getItem("token");
     const hash = window.location.hash;
@@ -33,6 +36,12 @@ export default function Home() {
     }
   }, []);
 
+  useEffect(() => {
+    apiClient.get("me").then((response) => {
+      setImage(response.data.images[0].url);
+    });
+  }, []);
+  
   return !token ? (
     <Login />
   ) : (
@@ -69,6 +78,10 @@ export default function Home() {
         <NavLink to="/favorites" className="iconWrapper">
           <HiLightningBolt className="MdSpaceDashboard" />
           Comingsoon
+        </NavLink>
+        <NavLink to="" className="iconWrapper">
+          <HiLogout className="MdSpaceDashboard" />
+          SignOut
         </NavLink>
       </footer>
     </Router>
